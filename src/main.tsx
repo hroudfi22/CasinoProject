@@ -2,6 +2,7 @@ import ReacDOM from 'react-dom/client';
 import './index.css';
 import Homepage from './HomePage/homepage.tsx';
 import GameSlot from './Slot/GameSlot.tsx';
+import GameRoulette from './Roulette/GameRoulette.tsx';
 import Signup from './Profile/signup.tsx';
 import Login from './Profile/login.tsx';
 import Menu from './Menu.tsx';
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
             path: "slot",
             element: <GameSlot/>
           },
+          {
+            path: "roulette",
+            element: <GameRoulette/>
+          }
         ]
       },
       {

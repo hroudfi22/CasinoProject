@@ -139,7 +139,15 @@ body {
 
 #menu div {
   background-color: #A22C22;
+  width: 150px;
+  height: 60px;
+  align-content: center;
   padding: 5px 10px;
+  border: 3px solid #af3e34;
+}
+
+#menu div:hover {
+  cursor: pointer;
 }
 
 #menu ul {
@@ -178,11 +186,13 @@ body {
 }
 
 .dropdown-content {
+  
+  z-index: 10;
   display: none;
   position: absolute;
-  top: 100%;
-  width: 100%;
-  left: 0;
+  top: 103.5%;
+  width: 103.5%;
+  left: -3px;
 
   background: #A22C22;
 
@@ -193,11 +203,14 @@ body {
 
 .dropdown-content li {
   padding: 10px 15px;
+  width: 150px;
+  height: 60px;
+  align-content: center;
+  border: 3px solid #af3e34;
 }
 
 .dropdown-content li a {
   font-size: 26px;
-
 }
 
 .dropdown-menu:hover .dropdown-content {

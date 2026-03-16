@@ -1,0 +1,127 @@
+h1 {
+  font-family: "Honk", system-ui;
+  font-weight: 400;
+}
+
+.lever {
+  rotate: 90deg;
+  scale: 1.5;
+  -webkit-appearance: none;
+  background: rgba(0,0,0,0.1);
+  border-radius: 10px;
+  width: 180px;
+  outline: none;
+}
+
+.lever::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #ff0000;
+  border: 1px solid black;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#lever {
+  float: left;
+  height: 300px;
+  width: 20px;
+  align-content: center;
+}
+
+.slot {
+  float: left;
+  margin: 0 10px;
+  height: 300px;
+  width: 100px;
+  border: 1px solid black;
+  background: rgba(255,255,255,0);
+  position: relative;
+  overflow: hidden;
+}
+
+.slot-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.SlotEmoji {
+  width: 100px;
+  height: 100px;
+  margin: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.slotblockup, .slotblockdown {
+  z-index: -1;
+  width: 370px;
+  height: 500px;
+  position: absolute;
+  background-color: #fff;
+}
+
+.slotblockup { top: -500px; }
+.slotblockdown { top: 202px; }
+
+.Spinning .slot-inner {
+  animation: spinReel 3s ease-in-out infinite;
+}
+
+.Spinning2 .slot-inner {
+  animation: spinReel 3s ease-in-out infinite;
+  animation-delay: 400ms;
+}
+
+.Spinning3 .slot-inner {
+  animation: spinReel 3s ease-in-out infinite;
+  animation-delay: 800ms;
+}
+
+@keyframes spinReel {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(3233.3%); }
+} */
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+body {
+  background-image: url("/img/raining-money-10.gif") !important;
+  background-size: cover;
+}
