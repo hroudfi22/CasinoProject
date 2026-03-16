@@ -26,7 +26,7 @@ function Login() {
                         <input id="password" type={passworType} name="password"/>
                         <input type="checkbox" id="password1visible1" onChange={(e : React.ChangeEvent<HTMLInputElement>) => checkBox(e.target.checked, setPasswordType)}/>
                     </div>
-                    <input type="submit" value="Register"/>
+                    <input type="submit" value="Login"/>
                 </form>
             </div>
         </>

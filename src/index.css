@@ -1,3 +1,21 @@
+/*
+
+source: "https://cz.pinterest.com/pin/7881368093443126/"
+
+1. Top color (light brown/tan): #BC8B6A
+
+2. Second color (brick red): #A22C22
+
+3. Third color (very dark brown/black): #1B0E0B
+
+4. Fourth color (olive green): #717600
+
+5. Bottom color (teal blue-green): #356568
+
+*/
+
+
+
 #root {
   float: left;
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -15,7 +33,7 @@ body {
   display: flex;
   min-width: 320px;
   min-height: 100vh;
-  background-color: green;
+  background-color: #717600;
   background-size: cover;
 }
 
@@ -112,8 +130,7 @@ body {
   width: 100%;
   height: fit-content;
   padding: 25px 30px;
-  background-color: white;
-  border: 1px solid  black;
+  background-color: #BC8B6A;
 
   display: flex;
   align-items: center;
@@ -121,8 +138,7 @@ body {
 }
 
 #menu div {
-  border: 1px solid gray;
-  background-color: black;
+  background-color: #A22C22;
   padding: 5px 10px;
 }
 
@@ -135,13 +151,12 @@ body {
 #menu li {
   cursor: pointer;
   padding: 5px 10px;
-  color: white;
   font-size: 32px;
   font-weight: 500;
 }
 
 #menu a, #menu p {
-  color: white;
+  color: #FFFFFF;
   padding: 5px 10px;
   text-decoration: none;
   font-weight: 500;
@@ -150,7 +165,7 @@ body {
 }
 
 #menu a:hover {
-  color: lightgreen;
+  color: #FFFFFF
 }
 
 .right {
@@ -169,8 +184,7 @@ body {
   width: 100%;
   left: 0;
 
-  background: black;
-  border: 1px solid gray;
+  background: #A22C22;
 
   list-style: none;
   padding: 0;
@@ -183,6 +197,7 @@ body {
 
 .dropdown-content li a {
   font-size: 26px;
+
 }
 
 .dropdown-menu:hover .dropdown-content {
