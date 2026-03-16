@@ -1,73 +1,31 @@
-:root {
+#root {
+  float: left;
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   color: #000;
-  background-color: #fff;
-}
-
-#root {
-  display: contents;
-}
-
-
-#menu {
-  float: left;
   width: 100%;
-  margin: 0 0 20px 0;
-  background-color: Green;
-  border: #000 3px solid;
-}
-
-#menu a {
-  font-size: 60px;
-  font-weight: 700;
-  text-decoration: none;
-  color: red;
-  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
-  float: left;
-  margin: 10px 20px;
-}
-
-#main-content {
-  float: left;
+  height: 100%;
   display: grid;
-  justify-content: center;
-  padding: 80px 0;
-  width: 100%;
-  place-items: center;
-  background-image: url("../img/FeatureImage_SlotMachine-removebg-preview.png");
-  background-repeat: no-repeat;
-  background-position: center 20px; 
-  background-size: 100% 120%;
-}
-
-#main-content p {
-  float: left;
-  margin: 0 auto;
-  font-size: 30px;
-  font-weight: 600;
-  background: white;
+  justify-items: center;
 }
 
 body {
   margin: 0;
+  display: flex;
   min-width: 320px;
   min-height: 100vh;
-  height: 100%;
-  width: 100%;
-  background-image: url("../img/raining-money-10.gif");
+  background-color: green;
   background-size: cover;
 }
 
-h1 {
+/*h1 {
   font-family: "Honk", system-ui;
   font-weight: 400;
 }
 
 .lever {
   rotate: 90deg;
-  translate: -60px 0px;
   scale: 1.5;
   -webkit-appearance: none;
   background: rgba(0,0,0,0.1);
@@ -89,14 +47,8 @@ h1 {
 #lever {
   float: left;
   height: 300px;
-  width: 60px;
+  width: 20px;
   align-content: center;
-}
-
-#slot {
-  display: flex;
-  justify-content: center;
-  background-color: white;
 }
 
 .slot {
@@ -106,6 +58,7 @@ h1 {
   width: 100px;
   border: 1px solid black;
   background: rgba(255,255,255,0);
+  position: relative;
   overflow: hidden;
 }
 
@@ -151,6 +104,88 @@ h1 {
 @keyframes spinReel {
   0% { transform: translateY(0); }
   100% { transform: translateY(3233.3%); }
+} */
+
+
+/* === MENU CSS === */
+#menu {
+  width: 100%;
+  height: fit-content;
+  padding: 25px 30px;
+  background-color: white;
+  border: 1px solid  black;
+
+  display: flex;
+  align-items: center;
+  gap: 30px;
 }
 
-/* s CSS mi dost pomáhal chat GPT */
+#menu div {
+  border: 1px solid gray;
+  background-color: black;
+  padding: 5px 10px;
+}
+
+#menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#menu li {
+  cursor: pointer;
+  padding: 5px 10px;
+  color: white;
+  font-size: 32px;
+  font-weight: 500;
+}
+
+#menu a, #menu p {
+  color: white;
+  padding: 5px 10px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 32px;
+  margin: 0;
+}
+
+#menu a:hover {
+  color: lightgreen;
+}
+
+.right {
+  margin-left: auto;
+}
+
+.dropdown-menu {
+  margin-left: auto;
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  left: 0;
+
+  background: black;
+  border: 1px solid gray;
+
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-content li {
+  padding: 10px 15px;
+}
+
+.dropdown-content li a {
+  font-size: 26px;
+}
+
+.dropdown-menu:hover .dropdown-content {
+  display: block;
+}
+

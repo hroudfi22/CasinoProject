@@ -1,3 +1,65 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #000;
+  background-color: #fff;
+}
+
+#root {
+  display: contents;
+}
+
+
+#menu {
+  float: left;
+  width: 100%;
+  margin: 0 0 20px 0;
+  background-color: Green;
+  border: #000 3px solid;
+}
+
+#menu a {
+  font-size: 60px;
+  font-weight: 700;
+  text-decoration: none;
+  color: red;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+  float: left;
+  margin: 10px 20px;
+}
+
+#main-content {
+  float: left;
+  display: grid;
+  justify-content: center;
+  padding: 80px 0;
+  width: 100%;
+  place-items: center;
+  background-image: url("../img/FeatureImage_SlotMachine-removebg-preview.png");
+  background-repeat: no-repeat;
+  background-position: center 20px; 
+  background-size: 100% 120%;
+}
+
+#main-content p {
+  float: left;
+  margin: 0 auto;
+  font-size: 30px;
+  font-weight: 600;
+  background: white;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  background-image: url("../img/raining-money-10.gif");
+  background-size: cover;
+}
+
 h1 {
   font-family: "Honk", system-ui;
   font-weight: 400;
@@ -5,6 +67,7 @@ h1 {
 
 .lever {
   rotate: 90deg;
+  translate: -60px 0px;
   scale: 1.5;
   -webkit-appearance: none;
   background: rgba(0,0,0,0.1);
@@ -26,8 +89,14 @@ h1 {
 #lever {
   float: left;
   height: 300px;
-  width: 20px;
+  width: 60px;
   align-content: center;
+}
+
+#slot {
+  display: flex;
+  justify-content: center;
+  background-color: white;
 }
 
 .slot {
@@ -37,7 +106,6 @@ h1 {
   width: 100px;
   border: 1px solid black;
   background: rgba(255,255,255,0);
-  position: relative;
   overflow: hidden;
 }
 
@@ -83,45 +151,6 @@ h1 {
 @keyframes spinReel {
   0% { transform: translateY(0); }
   100% { transform: translateY(3233.3%); }
-} */
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-body {
-  background-image: url("/img/raining-money-10.gif") !important;
-  background-size: cover;
-}
+/* s CSS mi dost pomáhal chat GPT */

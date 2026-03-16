@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import { Outlet } from 'react-router-dom';
+import { Outlet, Link } from 'react-router-dom';
 
 function Menu () {
 
@@ -10,10 +9,26 @@ function Menu () {
         <>
             <div id="menu">
                 <div>
-                    <a href={address+"/"}>Home</a>
+                    <Link to="/">Home</Link>
                 </div>
-                <div>
-                    <a href={address+"/game/slot"}>Slot</a>
+                <div className="dropdown-menu">
+                    <p>Games</p>
+                    <ul className="dropdown-content">
+                        <li>
+                            <Link to="/game/slot" className="right">Slot</Link>
+                        </li>
+                    </ul>
+                </div>
+                <div className="dropdown-menu">
+                    <p>Profile</p>
+                    <ul className="dropdown-content">
+                        <li>
+                            <Link to="/profile/login" className="right">Login</Link>
+                        </li>
+                        <li>
+                            <Link to="/profile/signup" className="right">Sign up</Link>
+                        </li>
+                    </ul>
                 </div>
             </div>
             <Outlet/>

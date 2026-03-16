@@ -159,14 +159,16 @@ function GameSlot() {
 
   return (
     <>
+      <link rel="stylesheet" href="/src/Slot/GameSlot.css"/>
       <div id="main-content">
-          <GambaMachine
-            IsRolling ={IsRolling}
-            Slot={Slot}
-            renderSlot={renderSlot}
-            Roll={Roll}
-            Money={Money}
-          />
+        <GambaMachine
+          IsRolling ={IsRolling}
+          Slot={Slot}
+          renderSlot={renderSlot}
+          Roll={Roll}
+        />
+        <br/>
+        <h2>Points: {Money}</h2>
       </div>
     </>
   );
