@@ -1,0 +1,55 @@
+#main-content {
+    width: fit-content;
+    padding: 20px 50px;
+    margin: 20px auto;
+    background-color: White;
+    border: 1px solid black;
+}
+
+#title {
+    font-weight: 500;
+    font-size: 20px;
+    border-bottom: 1px solid black;
+    padding:0 0 10px 0;
+}
+
+#main-content form {
+    float: left;
+    width: 300px;
+    height: fit-content;
+    justify-items: center;
+    padding: 10px 0;
+    display: block;
+}
+
+#main-content form div {
+    float: left;
+    width: 100%;
+    height: fit-content;
+    justify-items: center;
+}
+
+#main-content form div p {
+    width: 100%;
+    float: left;
+    margin: 15px auto 5px;
+    text-align: center;
+}
+
+#main-content div input {
+    float: left;
+    width: 200px;
+    height: fit-content;
+    margin: 0 0 0 45px;
+}
+
+#main-content input[type=checkbox] {
+    float: right;
+    width: fit-content;
+    margin: 3.5px 10px 0;
+}
+
+#main-content input[type=submit] {
+    margin: 30px auto 0;
+    width: 100px;
+}

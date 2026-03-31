@@ -5,7 +5,6 @@ type GambaMachineProps = {
   IsRolling: boolean[];
   Slot: string[][];
   renderSlot: Function;
-  Money: number;
 }
 
 export const GambaMachine = ({
@@ -13,7 +12,6 @@ export const GambaMachine = ({
   IsRolling,
   Slot,
   renderSlot,
-  Money
 }: GambaMachineProps) => {
 
   const [leverValue, setLeverValue] = useState(0);
@@ -64,8 +62,6 @@ export const GambaMachine = ({
               disabled={IsRolling[0] || IsRolling [2]}/>
           </div>
         </div>
-        
-        <p>Points: {Money}</p>
     </>
   );
 }
