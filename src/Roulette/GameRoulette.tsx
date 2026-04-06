@@ -1,6 +1,7 @@
 //import { useEffect, useState } from 'react';
 import roulettePNG from "../../img/RouletteGame.png"
 import { RouletteMachine } from './RouletteMachine.tsx';
+import './GameRoulette.css';
 //import { user } from "../User.tsx";
 
 
@@ -11,7 +12,7 @@ function GameRoulette() {
 
   return (
     <>
-      <div>
+      <div id="main-content">
         <RouletteMachine 
         roulettePNG={roulettePNG}
         />

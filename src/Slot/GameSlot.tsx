@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import Imgs from "../Imgs.tsx";
 import { GambaMachine } from './GambaMachine.tsx';
-import { user } from "../User.tsx";
+import { User } from "../User.tsx";
 
 
 function GameSlot() {
 
-  const { GetMoney, UpdateMoney} = user();
+  //const [GetMoney, UpdateMoney] = useState());
   const [Money, setMoney] = useState<number>(0);
 
   const getRandom = () => {
@@ -112,7 +112,7 @@ function GameSlot() {
       points += 100;
     }
  
-    UpdateMoney(Money+points);
+    //UpdateMoney(Money+points);
     setMoney(Money+points);
     setCounting(false);
     console.log("You won "+points+" points.");
@@ -153,13 +153,13 @@ function GameSlot() {
   useEffect(() => {
     // When website is open
     RandomizeSlot();
-    GetMoney(setMoney);
+    //GetMoney(setMoney);
   }, []);
 
 
   return (
     <>
-      <link rel="stylesheet" href="/src/Slot/GameSlot.css"/>
+      <link rel="stylesheet" href="./GameSlot.css"/>
       <div id="main-content">
         <GambaMachine
           IsRolling ={IsRolling}

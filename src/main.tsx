@@ -4,13 +4,14 @@ import Homepage from './HomePage/homepage.tsx';
 import GameSlot from './Slot/GameSlot.tsx';
 import GameRoulette from './Roulette/GameRoulette.tsx';
 import Signup from './Profile/signup.tsx';
-import Login from './Profile/login.tsx';
+import { Login }  from './Profile/login.tsx';
 import Menu from './Menu.tsx';
+import { User } from './User.tsx';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/casinoApp',
     element: <Menu />,
     children: [
       {
@@ -52,5 +53,7 @@ const router = createBrowserRouter([
 ]);
 
 ReacDOM.createRoot(document.getElementById('root')!).render(
-  <RouterProvider router={router}/>
-)
+  <User>
+    <RouterProvider router={router}/>
+  </User>
+);

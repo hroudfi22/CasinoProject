@@ -3,33 +3,6 @@ h1 {
   font-weight: 400;
 }
 
-.lever {
-  rotate: 90deg;
-  scale: 1.5;
-  -webkit-appearance: none;
-  background: rgba(0,0,0,0.1);
-  border-radius: 10px;
-  width: 180px;
-  outline: none;
-}
-
-.lever::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  width: 20px;
-  height: 20px;
-  background: #ff0000;
-  border: 1px solid black;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-#lever {
-  float: left;
-  height: 300px;
-  width: 20px;
-  align-content: center;
-}
-
 .slot {
   float: left;
   margin: 0 10px;
@@ -83,7 +56,7 @@ h1 {
 @keyframes spinReel {
   0% { transform: translateY(0); }
   100% { transform: translateY(3233.3%); }
-} */
+}
 
 .logo {
   height: 6em;

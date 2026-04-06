@@ -83,7 +83,7 @@ h1 {
 @keyframes spinReel {
   0% { transform: translateY(0); }
   100% { transform: translateY(3233.3%); }
-} */
+}
 
 .logo {
   height: 6em;

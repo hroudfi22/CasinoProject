@@ -11,6 +11,7 @@ export const RouletteMachine = ({
   return (
     <>
         <img src={roulettePNG} width="750px"/>
+        <button/>
     </>
   );
 }

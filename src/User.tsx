@@ -1,4 +1,9 @@
-export function user() {
+import { useState } from "react";
+
+export function User({ children }: { children: React.ReactNode }) {
+
+  const [userToken, setUserToken] = useState<string>("");
+
   const GetUser = () => {
     let id = localStorage.getItem("user_id");
       if (!id) {
@@ -29,8 +34,9 @@ export function user() {
     setMoney(data["points"]);
   }
 
-  return {
-    GetMoney,
-    UpdateMoney,
-  };
+  return (
+    <>
+      {children}
+    </>
+  );
 }
