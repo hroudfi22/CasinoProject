@@ -9,14 +9,14 @@ function Menu () {
     return (
         <>
             <div id="menu">
-                <div onClick={() => navigate("/casinoApp/")}>
-                    <Link to="/">Home</Link>
+                <div onClick={() => navigate("/casinoApp")}>
+                    <Link to="/casinoApp">Home</Link>
                 </div>
                 <div className="dropdown-menu">
                     <p>Games▾</p>
                     <ul className="dropdown-content">
                         <li onClick={() => navigate("/casinoApp/game/slot")}>
-                            <Link to="/game/slot" className="right">Slot</Link>
+                            <Link to="/casinoApp/game/slot" className="right">Slot</Link>
                         </li>
                         <li onClick={() => navigate("/casinoApp/game/roulette")}>
                             <Link to="/casinoApp/game/roulette" className="right">Roulette</Link>

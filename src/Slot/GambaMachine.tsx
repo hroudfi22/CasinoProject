@@ -34,8 +34,6 @@ export const GambaMachine = ({
 
   setTimeout(() => ResetLever(), 2);
 
-
-  // <div className="slotblockup" /> <div className="slotblockdown" />
   return (
     <>
         

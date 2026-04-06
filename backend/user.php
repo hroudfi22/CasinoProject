@@ -2,7 +2,7 @@
 
 include "db.php";
 
-$possibleTypes = ["login", "register", "updateMoney", "validateToken"];
+$possibleTypes = ["login", "register", "validateToken", "updateMoney", "getMoney"];
 
 $type = "";
 $out = [];
@@ -141,6 +141,28 @@ function UpdateMoney() {
     }
 }
 
+function GetMoney() {
+    $token = "";
+    if (isset($_POST['token']) && !empty($_POST['token'])) {
+        $token
+    } else error++;
+
+    if (error == 0) {
+        $ins = [
+            ":tokenVal" => $token,
+        ]
+        $sql = "SELECT money FROM casinoUsers WHERE token LIKE :tokenVal;";
+        $money = data_out($sql, $ins);
+        if (!empty($money[0]['money'])) {
+            $out['money'] = $money[0]['money'];
+        } else {
+            $out['Error'] = "Not valid token";
+        }
+    } else {
+        $out['Error'] = "No user token";
+    }
+}
+
 if (isset($_POST['type']) && !empty($_POST['type']) && in_array($_POST['type'], $[$possibleTypes])) {
     $type = $_POST['type'];
     if ($type == $possibleTypes[0]) {
@@ -149,8 +171,12 @@ if (isset($_POST['type']) && !empty($_POST['type']) && in_array($_POST['type'], 
         Register()
     } else if ($type == $possibleTypes[2]) {
         ValidateToken()
-    } else {
+    } else if ($type == $possibleTypes[3]) {
         UpdateMoney()
+    } else if ($type == $possibleTypes[4]) {
+        GetMoney()
+    } else {
+        $out['Error'] = "Type not defined or incorrect";
     }
 } else {
     $out['Error'] = "Type not defined or incorrect";

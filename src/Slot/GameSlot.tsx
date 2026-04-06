@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
 import Imgs from "../Imgs.tsx";
 import { GambaMachine } from './GambaMachine.tsx';
-import { User } from "../User.tsx";
+import { GetMoney, UpdateMoney, useAuth } from '../User.tsx';
 
 
 function GameSlot() {
 
-  //const [GetMoney, UpdateMoney] = useState());
   const [Money, setMoney] = useState<number>(0);
+  const [Bet, setBet] = useState<number>(10);
+  const { userToken } = useAuth();
 
   const getRandom = () => {
     return Imgs[Math.floor(Math.random() * Imgs.length)];
@@ -42,9 +43,25 @@ function GameSlot() {
     } else if (Counting) {
       console.log("Counting score");
       return;
+    } else if (Bet > Money) {
+      console.log("Not enough money to bet!");
+      alert("You don't have enough money for this bet!");
+      return;
+    } else if (Bet <= 0) {
+      console.log("Bet must be greater than 0!");
+      alert("Please enter a valid bet amount!");
+      return;
     } else {
       console.log("Let's gooooooo");
     }
+
+    // Deduct bet amount
+    const newMoney = Money - Bet;
+    
+    if (userToken) {
+      UpdateMoney(userToken, newMoney);
+    }
+    setMoney(newMoney);
 
 
     // Get the slots ready 
@@ -112,10 +129,17 @@ function GameSlot() {
       points += 100;
     }
  
-    //UpdateMoney(Money+points);
-    setMoney(Money+points);
+    // Calculate winnings based on bet
+    const winnings = points * (Bet/10);
+    if (userToken) {
+      GetMoney(userToken).then(currentMoney => { const finalMoney = Math.round(currentMoney + winnings);
+      UpdateMoney(userToken, finalMoney);
+      setMoney(finalMoney);
+      });
+    }
+    
     setCounting(false);
-    console.log("You won "+points+" points.");
+    console.log(`You bet ${Bet} and won ${winnings} points!`);
   }
 
   const startSlot = (slot : number) => {
@@ -153,14 +177,45 @@ function GameSlot() {
   useEffect(() => {
     // When website is open
     RandomizeSlot();
-    //GetMoney(setMoney);
-  }, []);
+    if (userToken) {
+      GetMoney(userToken).then(setMoney);
+    }
+  }, [userToken]);
+
+  useEffect(() => {
+    // Adjust bet if it exceeds current money
+    if (Bet > Money) {
+      setBet(Money);
+    } else if (Money === 0) {
+      setBet(0);
+    }
+  }, [Money, Bet]);
 
 
   return (
     <>
       <link rel="stylesheet" href="./GameSlot.css"/>
       <div id="main-content">
+        <div id="betting-section">
+          <h2>Money: ${Money}</h2>
+          {Money === 0 ? (
+            <p style={{color: 'red'}}>You're out of money! Please add more funds or refresh the page.</p>
+          ) : (
+            <div className="bet-controls">
+              <label htmlFor="bet-amount">Bet Amount: </label>
+              <input
+                id="bet-amount"
+                type="range"
+                min="1"
+                max={Math.max(Money, 1)}
+                value={Bet}
+                onChange={(e) => setBet(Number(e.target.value))}
+                disabled={IsRolling.some(v => v) || Counting || Money === 0}
+              />
+              <span>${Bet}</span>
+            </div>
+          )}
+        </div>
         <GambaMachine
           IsRolling ={IsRolling}
           Slot={Slot}
@@ -168,7 +223,6 @@ function GameSlot() {
           Roll={Roll}
         />
         <br/>
-        <h2>Points: {Money}</h2>
       </div>
     </>
   );

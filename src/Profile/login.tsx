@@ -1,14 +1,16 @@
-import { useState } from "react";
+import { useState, type ChangeEvent, type FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../User.tsx";
 import './login.css';
 
 export function Login() {
     const navigate = useNavigate();
+    const { setUserToken } = useAuth();
     const [passworType, setPasswordType] = useState<string>("password");
     const [password, setPassword] = useState<string>("");
     const [usernamemail, setUsernamemail] = useState<string>("");
 
-    const SendLogin = async (e : React.FormEvent<HTMLFormElement>) => {
+    const SendLogin = async (e : FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (password == "") {
             alert("No password entred");
@@ -32,9 +34,14 @@ export function Login() {
             alert(data["Error"]);
             return;
         }
-        console.log("Login was succesfull, your token is: "+data["token"]);
-        //console.log("userToken: "+userToken);
-        //navigate("/casinoApp/");
+        if (!data["token"]) {
+            alert("Login succeeded but no token was returned.");
+            return;
+        }
+
+        setUserToken(String(data["token"]));
+        console.log("Login was successful, your token is: "+data["token"]);
+        navigate("/casinoApp/");
     }
 
 
@@ -50,7 +57,7 @@ export function Login() {
         <>
             <div id="main-content">
                 <form onSubmit={(e) => SendLogin(e)}>
-                    <p id="title">Sign Up</p> 
+                    <p id="title">Log In</p> 
                     <div>
                         <p>Email or username: </p>
                         <input id="email" type="text" name="email" onChange={(e) => setUsernamemail(e.target.value)}/>
@@ -58,7 +65,7 @@ export function Login() {
                     <div>
                         <p>Password: </p>
                         <input id="password" type={passworType} name="password" onChange={(e) => setPassword(e.target.value)}/>
-                        <input type="checkbox" id="password1visible1" onChange={(e : React.ChangeEvent<HTMLInputElement>) => checkBox(e.target.checked, setPasswordType)}/>
+                        <input type="checkbox" id="password1visible1" onChange={(e : ChangeEvent<HTMLInputElement>) => checkBox(e.target.checked, setPasswordType)}/>
                     </div>
                     <input type="submit" value="Login"/>
                 </form>

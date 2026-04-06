@@ -3,7 +3,35 @@ h1 {
   font-weight: 400;
 }
 
+#betting-section {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.bet-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.bet-controls input[type="range"] {
+  width: 200px;
+}
+
 .lever {
+  rotate: 90deg;
+  scale: 1.5;
+  -webkit-appearance: none;
+  background: rgba(0,0,0,0.1);
+  border-radius: 10px;
+  width: 180px;
+  outline: none;
+}
   rotate: 90deg;
   scale: 1.5;
   -webkit-appearance: none;

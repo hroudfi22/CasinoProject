@@ -1,5 +1,3 @@
-//import { useEffect, useState } from 'react';
-//import { GetUser, UpdatePoints, Points } from '../User.tsx';
 import './homepage.css';
 
 function Homepage() {
